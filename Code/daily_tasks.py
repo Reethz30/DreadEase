@@ -29,8 +29,7 @@ def fetch_phobia_data(email):
 
 def load_precautions():
     # Load the Excel file
-    df = pd.read_excel('https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/symptoms.xlsx')
-    #st.write(df)
+    df = pd.read_excel('symptoms.xlsx')
     return df
 
 def page_footer():
@@ -120,15 +119,14 @@ def daily_tasks():
 
             # Filter the DataFrame based on user's phobia type and level
             filtered_precautions = precautions_df[
-                (precautions_df['phobia'] == phobia_type)]
-            st.write(precautions_df,filtered_precautions,phobia_type,phobia_level)
-            #&(precautions_df['level'] == phobia_level)]
+                (precautions_df['phobia'] == phobia_type) ]
+                #&(precautions_df['level'] == phobia_level)]
             filtered_precautions = filtered_precautions[
                 (filtered_precautions['level'] == phobia_level)]
 
             # Fetch previously checked precautions and the last checked date
             x,checked_precautions, last_checked_date = fetch_checked_precautions(email)
-            #st.write(filtered_precautions)
+            #st.write(x,checked_precautions)
 
             # Reset checked precautions if the day has changed
             if last_checked_date and str(last_checked_date) != str(datetime.now().date()):

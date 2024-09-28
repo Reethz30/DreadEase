@@ -119,12 +119,10 @@ def daily_tasks():
 
             phobia_type = phobia_type.lower()
             phobia_level = phobia_level.lower()
-            precaution_df['phobia'] = precaution_df['phobia'].str.lower()
+            precaution_df['phobia'] = precaution_df['phobia'].str.strip().lower()
             precaution_df['level'] = precaution_df['level'].str.lower()
             #st.write(precaution_df,precaution_df['phobia'],precaution_df['level'])
-            f=''
-            for i in phobia_type:
-                f+=i
+            
             test_filter = precaution_df[precaution_df['phobia'] == f]
             st.write("Test Filter Results:", test_filter, phobia_type)
             precautions_df=precaution_df

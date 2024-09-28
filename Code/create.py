@@ -2,6 +2,7 @@ import streamlit as st
 import sqlite3
 import uuid
 import datetime
+import time
 from streamlit_js_eval import streamlit_js_eval as sj
 
 # Function to connect to the database
@@ -95,6 +96,7 @@ def create_account_page(navigate_to):
 
                 # Redirect to the dashboard (or any other page)
                 navigate_to('test')  # Assuming 'dashboard' is the page to navigate after login
+                time.sleep(5)
                 sj(js_expressions="parent.window.location.reload()")
 
     # Button to go back to the login page

@@ -182,7 +182,7 @@ def profile():
                       
             # File uploader for user to upload their own picture
                 #default_image = st.image(default_image_path, caption="Default Profile Photo", use_column_width=False, width=150)
-                response = requests.get(logo_url, stream=True)
+                response = requests.get(default_image_path, stream=True)
                 default_image = Image.open(response.raw)
                 rounded_image = create_rounded_image(default_image)
                 st.image(rounded_image, caption="Default Profile Photo", use_column_width=False, width=150)

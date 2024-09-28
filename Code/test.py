@@ -22,8 +22,8 @@ def get_email():
 
 # Function to load and prepare the training dataset
 def load_training_data():
-    df = pd.read_csv('https://raw.githubusercontent.com/Reethz30/DreadEase/edit/main/Code/Mini-Project.csv')
-    
+    df = pd.read_csv('https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/Mini-Project.csv')
+
     # Combine symptom columns into a single list for each row
     df['All_Symptoms'] = df[['Symptom_1', 'Symptom_2', 'Symptom_3', 'Symptom_4', 'Symptom_5', 'Symptom_6']].apply(lambda row: ', '.join([str(symptom) for symptom in row if pd.notna(symptom)]), axis=1)
     

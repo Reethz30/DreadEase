@@ -112,16 +112,16 @@ def daily_tasks():
             st.title("Daily Tasks to Overcome Phobia")
 
             # Load the precautions from the Excel sheet
-            precautions_df = load_precautions()
-            if precautions_df.empty:
+            precaution_df = load_precautions()
+            if precaution_df.empty:
                 st.warning("No precautions data loaded from Excel.")
                 return
 
             phobia_type = phobia_type.lower()
             phobia_level = phobia_level.lower()
-            precautions_df['phobia'] = precautions_df['phobia'].str.strip().str.lower()
-            precautions_df['level'] = precautions_df['level'].str.strip().str.lower
-            
+            precaution_df['phobia'] = precaution_df['phobia'].str.strip().str.lower()
+            precaution_df['level'] = precaution_df['level'].str.strip().str.lower
+            precautions_df=precaution_df
             filtered_precautions = precautions_df[
                 (precautions_df['level'] == phobia_level)]
             st.write("Filtered Precautions:", filtered_precautions)

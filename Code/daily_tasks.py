@@ -130,7 +130,7 @@ def daily_tasks():
             # Filter the DataFrame based on user's phobia type and level
             x=precautions_df[precautions_df['level']==phobia_level]
             st.write(x)
-            x=x[x['phobia']=='agrophobia']
+            x=x[x['phobia']=='acrophobia']
             st.write(x)
             filtered_precautions = precautions_df[
                 (precautions_df['phobia'] == phobia_type) &

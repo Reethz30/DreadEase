@@ -86,12 +86,13 @@ def create_account_page(navigate_to):
             st.error("Password field is empty.")
         else:
             # Generate a unique secret key for the user
+             st.write("The Secret Key is crucial to keep safe for future reference, as it is necessary for actions like password recovery and account verification.")
             secret_key = str(uuid.uuid4())
             
             # Create the user and log them in if successful
             if create_user(new_email, new_password, secret_key):
                 # Display the secret key for future password resets
-                st.write("The Secret Key is crucial to keep safe for future reference, as it is necessary for actions like password recovery and account verification.")
+               
                 with st.expander("Your Secret Key"):
                     st.write(f"Secret Key: {secret_key}")
                 with st.spinner("Processing..."):
@@ -99,7 +100,7 @@ def create_account_page(navigate_to):
 
                 # Redirect to the dashboard (or any other page)
                 navigate_to('test')  # Assuming 'dashboard' is the page to navigate after login
-                #sj(js_expressions="parent.window.location.reload()")
+                sj(js_expressions="parent.window.location.reload()")
 
     # Button to go back to the login page
     if st.button("Back to Login"):

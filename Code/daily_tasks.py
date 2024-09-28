@@ -30,6 +30,7 @@ def fetch_phobia_data(email):
 def load_precautions():
     # Load the Excel file
     df = pd.read_excel('https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/symptoms.xlsx')
+    st.write(df)
     return df
 
 def page_footer():

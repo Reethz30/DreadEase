@@ -20,7 +20,7 @@ def create_rounded_image(image, size=(800, 800)):
     return rounded_image
 
 def splash_page():
-    
+    current_directory = os.getcwd()
     logo_path = os.path.join(current_directory, 'dreadease_logo.png')
     logo = Image.open(logo_path)
     rounded_image = create_rounded_image(logo)

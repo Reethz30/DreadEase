@@ -94,7 +94,8 @@ def create_account_page(navigate_to):
                 st.write("The Secret Key is crucial to keep safe for future reference, as it is necessary for actions like password recovery and account verification.")
                 with st.expander("Your Secret Key"):
                     st.write(f"Secret Key: {secret_key}")
-                time.sleep(10)
+                with st.spinner("Processing..."):
+                    time.sleep(5)
 
                 # Redirect to the dashboard (or any other page)
                 navigate_to('test')  # Assuming 'dashboard' is the page to navigate after login

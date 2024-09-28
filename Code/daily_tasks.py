@@ -123,11 +123,20 @@ def daily_tasks():
             a=precautions_df['phobia']
             st.write(a)
             precautions_df['level'] = precautions_df['level'].str.strip().str.lower
+            phobia_mask = precautions_df['phobia'] == phobia_type.lower()
+            level_mask = precautions_df['level'] == phobia_level.lower()
+
+            # Debugging: Print masks
+            st.write("Phobia Mask:", phobia_mask)
+            st.write("Level Mask:", level_mask)
+
+            # Filter using the masks
+            filtered_precautions = precautions_df[phobia_mask & level_mask]
             
-            filtered_precautions = precautions_df[
+            '''filtered_precautions = precautions_df[
                 (a == 'acrophobia') &
                 (precautions_df['level'] == phobia_level)
-            ]
+            ]'''
             st.write("Filtered Precautions:", filtered_precautions)
 
             # Fetch previously checked precautions and the last checked date

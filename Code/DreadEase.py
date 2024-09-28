@@ -3,7 +3,6 @@ import login
 import create
 import dashboardt
 import dashboardl
-import password
 import test
 import user
 import daily_tasks

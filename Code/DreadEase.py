@@ -8,6 +8,7 @@ import database
 import user
 import daily_tasks
 import settings
+import password
 import splash
 import major_tasks
 

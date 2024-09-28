@@ -125,7 +125,7 @@ def daily_tasks():
             precautions_df['level'] = precautions_df['level'].str.strip().str.lower
             
             filtered_precautions = precautions_df[
-                (precautions_df['phobia'] == 'arcophobia') &
+                (a == 'arcophobia') &
                 (precautions_df['level'] == phobia_level)
             ]
             st.write("Filtered Precautions:", filtered_precautions)

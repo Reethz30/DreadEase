@@ -79,7 +79,7 @@ def contact_us():
                 'user_message': user_message
             }
             try:
-                response = requests.post("http://192.168.31.228/dreadease/send_email.php", data=data)
+                response = requests.post("http://192.168.31.28/dreadease/send_email.php", data=data)
                 if response.status_code == 200:
                     st.success("Your message has been sent successfully! We will get back to you soon.")
                 else:

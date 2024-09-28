@@ -99,7 +99,7 @@ def create_account_page(navigate_to):
 
                 # Redirect to the dashboard (or any other page)
                 navigate_to('test')  # Assuming 'dashboard' is the page to navigate after login
-                sj(js_expressions="parent.window.location.reload()")
+                #sj(js_expressions="parent.window.location.reload()")
 
     # Button to go back to the login page
     if st.button("Back to Login"):

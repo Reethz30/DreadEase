@@ -1,2 +1,2 @@
 streamlit-js-eval
-sklearn
+scikit-learn

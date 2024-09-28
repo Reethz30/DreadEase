@@ -119,8 +119,10 @@ def daily_tasks():
 
             # Filter the DataFrame based on user's phobia type and level
             filtered_precautions = precautions_df[
-                (precautions_df['phobia'] == phobia_type) &
-                (precautions_df['level'] == phobia_level)]
+                (precautions_df['phobia'] == phobia_type)]
+            #&(precautions_df['level'] == phobia_level)]
+            filtered_precautions = filtered_precautions[
+                (filtered_precautions['level'] == phobia_type)]
 
             # Fetch previously checked precautions and the last checked date
             x,checked_precautions, last_checked_date = fetch_checked_precautions(email)

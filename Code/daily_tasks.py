@@ -126,7 +126,7 @@ def daily_tasks():
 
             # Fetch previously checked precautions and the last checked date
             x,checked_precautions, last_checked_date = fetch_checked_precautions(email)
-            #st.write(x,checked_precautions)
+            st.write(filtered_precautions)
 
             # Reset checked precautions if the day has changed
             if last_checked_date and str(last_checked_date) != str(datetime.now().date()):

@@ -91,6 +91,7 @@ def create_account_page(navigate_to):
             # Create the user and log them in if successful
             if create_user(new_email, new_password, secret_key):
                 # Display the secret key for future password resets
+                st.write("The Secret Key is crucial to keep safe for future reference, as it is necessary for actions like password recovery and account verification.")
                 with st.expander("Your Secret Key"):
                     st.write(f"Secret Key: {secret_key}")
 

@@ -15,6 +15,8 @@ st.set_page_config(
     layout="wide",  # Use the entire screen width
     #initial_sidebar_state="collapsed"
 )
+# Call the function to create the database and tables
+create_db()
 # Get the current page from query parameters
 query_params = st.query_params.to_dict()
 current_page = query_params.get('page', 'splash')

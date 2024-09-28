@@ -79,9 +79,9 @@ def page_footer():
 def fetch_checked_precautions(email):
     conn = connect_db()
     c = conn.cursor()
-    c.execute('SELECT age,fear_of,last_checked_date FROM dashboard_users WHERE email=? ',(email,))
+    '''c.execute('SELECT age,fear_of,last_checked_date FROM dashboard_users WHERE email=? ',(email,))
     res=c.fetchone()
-    st.write(res)
+    st.write(res)'''
     c.execute('''SELECT name,checked_precautions, last_checked_date FROM dashboard_users WHERE email=?''', (email,))
     result = c.fetchone()
     #st.write(f"Fetched data for {email}: {result}")

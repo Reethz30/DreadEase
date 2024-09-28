@@ -22,8 +22,11 @@ def create_rounded_image(image, size=(800, 800)):
     return rounded_image
 
 def splash_page():
-    logo_url = "https://github.com/Reethz30/DreadEase/edit/main/Code/splash.py"
-    logo = Image.open(requests.get(logo_url, stream=True).raw)
+    logo_url = "https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/dreadease_logo.png"
+
+    response = requests.get(logo_url, stream=True)
+    logo = Image.open(response.raw)
+
     #logo = Image.open(logo_path)
     rounded_image = create_rounded_image(logo)
     col1, col2= st.columns([0.4, 1])  # Creates 3 equal columns

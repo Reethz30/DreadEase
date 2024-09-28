@@ -1,5 +1,6 @@
 import streamlit as st
 import sqlite3
+from streamlit_js_eval import streamlit_js_eval as sj
 
 # Function to connect to the database
 def connect_db():
@@ -45,9 +46,11 @@ def reset_password_page(navigate_to):
                     reset_password(email, new_password)
                     st.success("Password has been reset!")
                     navigate_to('login')  # Navigate to the login page after reset
+                    sj(js_expressions="parent.window.location.reload()")
                 else:
                     st.error("Invalid email or secret key.")
 
     with col2:
         if st.button("Back to Login"):
             navigate_to('login')  # Navigate back to the login page
+            sj(js_expressions="parent.window.location.reload()")

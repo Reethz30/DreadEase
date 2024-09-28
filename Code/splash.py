@@ -4,6 +4,8 @@ from PIL import Image,ImageDraw,ImageOps
 from streamlit_extras.stylable_container import stylable_container
 from streamlit_js_eval import streamlit_js_eval as sj
 import os
+import requests
+
 
 def navigate_to(page):
     st.query_params.from_dict({"page": page})

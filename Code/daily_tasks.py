@@ -121,14 +121,15 @@ def daily_tasks():
             phobia_level = phobia_level.lower()
             precaution_df['phobia'] = precaution_df['phobia'].str.lower()
             precaution_df['level'] = precaution_df['level'].str.lower()
-            st.write(precaution_df,precaution_df['phobia'],precaution_df['level'])
-            test_filter = precautions_df[precautions_df['phobia'] == phobia_type]
+            #st.write(precaution_df,precaution_df['phobia'],precaution_df['level'])
+            test_filter = precaution_df[precaution_df['phobia'] == phobia_type]
+            st.write("Test Filter Results:", test_filter)
             precautions_df=precaution_df
             filtered_precautions = precautions_df[
                 (precautions_df['level'] == phobia_level)]
-            st.write("Filtered Precautions:", filtered_precautions)
+            #st.write("Filtered Precautions:", filtered_precautions)
             filtered_precautions = filtered_precautions[(precautions_df['type']==phobia_type)]
-            st.write("Filtered Precautions:", filtered_precautions)
+            #st.write("Filtered Precautions:", filtered_precautions)
 
             # Fetch previously checked precautions and the last checked date
             x,checked_precautions, last_checked_date = fetch_checked_precautions(email)

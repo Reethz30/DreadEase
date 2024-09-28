@@ -216,6 +216,7 @@ def dashboardt_page():
             st.warning("No user found in account creation database.")
 
     with col2:
+        if predicted_phobia_level != 'Major':
         # Fire Streak Feature
         st.write('\n')
         st.write('\n')

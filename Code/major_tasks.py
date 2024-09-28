@@ -25,7 +25,7 @@ def fetch_available_states():
 
 def major_tasks():
     st.title("DreadEase - Consultant Finder")
-    excel_file_path = 'Major_Links.xlsx' 
+    excel_file_path = 'https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/Major_Links.xlsx' 
     df = pd.read_excel(excel_file_path)
     email = fetch_email()
     if not email:

@@ -60,5 +60,4 @@ def create_db():
     #c.execute('''ALTER TABLE dashboard_users ADD COLUMN coins INTEGER''')
     
 
-# Call the function to create the database and tables
-create_db()
+

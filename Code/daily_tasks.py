@@ -128,7 +128,7 @@ def daily_tasks():
             filtered_precautions = precautions_df[
                 (precautions_df['level'] == phobia_level)]
             #st.write("Filtered Precautions:", filtered_precautions)
-            filtered_precautions = filtered_precautions[(precautions_df['type']==phobia_type)]
+            filtered_precautions = filtered_precautions[(precautions_df['phobia']==phobia_type)]
             #st.write("Filtered Precautions:", filtered_precautions)
 
             # Fetch previously checked precautions and the last checked date

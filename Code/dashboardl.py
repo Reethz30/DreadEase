@@ -217,10 +217,11 @@ def dashboardl_page():
 
     with col2:
         # Fire Streak Feature
-        st.write('\n')
-        st.write('\n')
-        st.write('\n')
-        fire_streak(email)  # Check and display fire streak
+        if predicted_phobia_level != 'Major':
+            st.write('\n')
+            st.write('\n')
+            st.write('\n')
+            fire_streak(email)  # Check and display fire streak
          
         
     if st.button('User Account'):

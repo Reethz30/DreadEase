@@ -122,7 +122,7 @@ def daily_tasks():
             precaution_df['phobia'] = precaution_df['phobia'].str.lower()
             precaution_df['level'] = precaution_df['level'].str.lower()
             #st.write(precaution_df,precaution_df['phobia'],precaution_df['level'])
-            test_filter = precaution_df[precaution_df['phobia'] == phobia_type]
+            test_filter = precaution_df[precaution_df['phobia'] == 'nomophobia']
             st.write("Test Filter Results:", test_filter)
             precautions_df=precaution_df
             filtered_precautions = precautions_df[

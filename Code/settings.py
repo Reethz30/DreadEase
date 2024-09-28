@@ -5,6 +5,8 @@ from PIL import Image, ImageOps, ImageDraw
 from datetime import datetime
 from streamlit_extras.stylable_container import stylable_container
 from streamlit_js_eval import streamlit_js_eval as sj
+import os
+import requests
 
 def navigate_to(page):
     st.query_params.from_dict({"page": page}) 
@@ -159,7 +161,9 @@ def settings():
         # Column 2: Logo display
         with col2:
             # Load and display the logo
-            logo = Image.open("dreadease_logo.png")  # Replace with the actual path to your logo
+            logo_url = "https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/dreadease_logo.png"
+            response = requests.get(logo_url, stream=True)
+            logo = Image.open(response.raw)  # Replace with the actual path to your logo
             rounded_image = create_rounded_image(logo)
             st.image(rounded_image, use_column_width=False, width=250)
 

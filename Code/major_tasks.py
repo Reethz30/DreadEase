@@ -18,11 +18,6 @@ def fetch_email():
     return email[0] if email else None
 
 
-def fetch_available_states():
-    excel_file_path = 'Major_Links.xlsx'  
-    df = pd.read_excel(excel_file_path)
-    return df['Location'].unique().tolist()
-
 def major_tasks():
     st.title("DreadEase - Consultant Finder")
     excel_file_path = 'https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/Major_Links.xlsx' 
@@ -31,7 +26,7 @@ def major_tasks():
     if not email:
         st.error("No user email found.")
         return
-    available_states = fetch_available_states()
+    available_states = df['Location'].unique().tolist()
     selected_state = st.selectbox('Select your state:', available_states)
     state_consultants = df[df['Location'] == selected_state]
     if state_consultants.empty:

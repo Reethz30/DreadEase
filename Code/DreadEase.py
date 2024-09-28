@@ -4,6 +4,7 @@ import create
 import dashboardt
 import dashboardl
 import test
+import database
 import user
 import daily_tasks
 import settings
@@ -16,7 +17,7 @@ st.set_page_config(
     #initial_sidebar_state="collapsed"
 )
 # Call the function to create the database and tables
-create_db()
+database.create_db()
 # Get the current page from query parameters
 query_params = st.query_params.to_dict()
 current_page = query_params.get('page', 'splash')

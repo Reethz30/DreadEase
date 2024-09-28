@@ -120,6 +120,7 @@ def daily_tasks():
             phobia_type = phobia_type.lower()
             phobia_level = phobia_level.lower()
             precautions_df['phobia'] = precautions_df['phobia'].str.strip().str.lower()
+            st.write(precautions_df['phobia'])
             precautions_df['level'] = precautions_df['level'].str.strip().str.lower()
 
             # Debugging outputs

@@ -117,7 +117,7 @@ def daily_tasks():
             phobia_level = phobia_level.lower()
             precautions_df['phobia'] = precautions_df['phobia'].str.lower()
             precautions_df['level'] = precautions_df['level'].str.lower()
-            st.write(precautions_df['level'],precautions_df['phobia'])
+            st.write(phobia_type,phobia_level)#precautions_df['level'],precautions_df['phobia'])
 
             # Filter the DataFrame based on user's phobia type and level
             filtered_precautions = precautions_df[

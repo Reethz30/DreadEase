@@ -133,10 +133,10 @@ def daily_tasks():
             y=precautions_df[a==str(b)]
             st.write(a,b,precautions_df['phobia'],precautions_df['phobia']==b)
             x=precautions_df[precautions_df['level']==phobia_level]
-            st.write(x)
+            #st.write(x)
             b=phobia_type
-            y=precautions_df[precautions_df['phobia']==str(b)]
-            st.write(y)
+            y=precautions_df[x['phobia']==str(b)]
+            #st.write(y)
             
             filtered_precautions = precautions_df[
                 (precautions_df['phobia'] == phobia_type) &

@@ -127,7 +127,7 @@ def daily_tasks():
             c=c[precautions_df['phobia'] == phobia_type]
             st.write(c)'''
             st.write("Original DataFrame:", precautions_df)
-            st.write("Filtered Precautions:", filtered_precautions)
+            #st.write("Filtered Precautions:", filtered_precautions)
 
             filtered_precautions = precautions_df[
             (precautions_df['phobia'] == phobia_type) &

@@ -3,6 +3,7 @@ import time
 from PIL import Image,ImageDraw,ImageOps
 from streamlit_extras.stylable_container import stylable_container
 from streamlit_js_eval import streamlit_js_eval as sj
+import os
 
 def navigate_to(page):
     st.query_params.from_dict({"page": page})
@@ -20,7 +21,8 @@ def create_rounded_image(image, size=(800, 800)):
 
 def splash_page():
     
-    logo = Image.open("dreadease_logo.png")
+    logo_path = os.path.join(current_directory, 'dreadease_logo.png')
+    logo = Image.open(logo_path)
     rounded_image = create_rounded_image(logo)
     col1, col2= st.columns([0.4, 1])  # Creates 3 equal columns
     with col2:  # Use the center column

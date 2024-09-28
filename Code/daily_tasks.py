@@ -113,26 +113,26 @@ def daily_tasks():
 
             # Load the precautions from the Excel sheet
             precautions_df = load_precautions()
+            if precautions_df.empty:
+                st.warning("No precautions data loaded from Excel.")
+                return
+
             phobia_type = phobia_type.lower()
             phobia_level = phobia_level.lower()
-            precautions_df['phobia'] = precautions_df['phobia'].str.strip()
-            precautions_df['level'] = precautions_df['level'].str.strip()
-            precautions_df['phobia'] = precautions_df['phobia'].str.lower()
-            precautions_df['level'] = precautions_df['level'].str.lower()
-            #st.write(phobia_type,phobia_level)#precautions_df['level'],precautions_df['phobia'])
+            precautions_df['phobia'] = precautions_df['phobia'].str.strip().str.lower()
+            precautions_df['level'] = precautions_df['level'].str.strip().str.lower()
+
+            # Debugging outputs
+            st.write("Phobia Type:", phobia_type)
+            st.write("Phobia Level:", phobia_level)
+            st.write("Original DataFrame:", precautions_df)
 
             # Filter the DataFrame based on user's phobia type and level
-            #st.write(precautions_df,precautions_df[precautions_df['phobia'] == phobia_type])
-            '''c=precautions_df
-            c=c[precautions_df['phobia'] == phobia_type]
-            st.write(c)'''
-            st.write("Original DataFrame:", precautions_df)
-            #st.write("Filtered Precautions:", filtered_precautions)
-
             filtered_precautions = precautions_df[
-            (precautions_df['phobia'] == phobia_type) &
-            (precautions_df['level'] == phobia_level)]
-            st.write(filtered_precautions)
+                (precautions_df['phobia'] == phobia_type) &
+                (precautions_df['level'] == phobia_level)
+            ]
+            st.write("Filtered Precautions:", filtered_precautions)
 
             # Fetch previously checked precautions and the last checked date
             x,checked_precautions, last_checked_date = fetch_checked_precautions(email)

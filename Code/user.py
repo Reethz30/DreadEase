@@ -5,6 +5,8 @@ import calendar
 from PIL import Image, ImageDraw,ImageOps
 from streamlit_extras.stylable_container import stylable_container
 from streamlit_js_eval import streamlit_js_eval as sj
+import os
+import requests
 
 def navigate_to(page):
     st.query_params.from_dict({"page": page})
@@ -171,16 +173,17 @@ def profile():
                 # Default image based on gender
                 default_image_path = ""
                 if gender.lower() == "male":
-                    default_image_path = "F:/Projects/Minor_project/2.png"  # Update with your image path
+                    default_image_path = "https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/2.png"  # Update with your image path
                 elif gender.lower() == "female":
-                    default_image_path = "F:/Projects/Minor_project/1.png"  # Update with your image path
+                    default_image_path = "https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/1.png"  # Update with your image path
                 else:
                     #st.write("hiii")
-                    default_image_path = "F:/Projects/Minor_project/3.jpeg"  # Default for others or no gender specified
+                    default_image_path = "https://raw.githubusercontent.com/Reethz30/DreadEase/main/Code/3.jpeg"  # Default for others or no gender specified
                       
             # File uploader for user to upload their own picture
                 #default_image = st.image(default_image_path, caption="Default Profile Photo", use_column_width=False, width=150)
-                default_image = Image.open(default_image_path)
+                response = requests.get(logo_url, stream=True)
+                default_image = Image.open(response.raw)
                 rounded_image = create_rounded_image(default_image)
                 st.image(rounded_image, caption="Default Profile Photo", use_column_width=False, width=150)
         

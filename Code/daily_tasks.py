@@ -117,7 +117,7 @@ def daily_tasks():
                 st.warning("No precautions data loaded from Excel.")
                 return
 
-            phobia_type = phobia_type.lower()
+            phobia_type = phobia_type.str.lower()
             phobia_level = phobia_level.lower()
             precaution_df['phobia'] = precaution_df['phobia'].str.strip()
             precaution_df['phobia'] = precaution_df['phobia'].str.lower()

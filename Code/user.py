@@ -45,7 +45,7 @@ def fetch_activity_streak(email):
     c = conn.cursor()
     c.execute('SELECT login_date FROM activity_log WHERE email=? ORDER BY login_date DESC', (email,))
     activity_dates = [row[0] for row in c.fetchall()]
-    st.write(activity_dates)
+    #st.write(activity_dates)
     conn.close()
     
     streak_days = {}
@@ -62,7 +62,7 @@ def display_calendar(year, month, active_days):
 
     days_in_month = [first_day + timedelta(days=i) for i in range((last_day - first_day).days + 1)]
     active_days_set = set(active_days)
-    st.write(active_days)
+    #st.write(active_days)
 
     # Display the calendar
     calendar_html = '<table style="border-collapse: collapse;">'

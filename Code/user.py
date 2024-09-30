@@ -45,6 +45,7 @@ def fetch_activity_streak(email):
     c = conn.cursor()
     c.execute('SELECT login_date FROM activity_log WHERE email=? ORDER BY login_date DESC', (email,))
     activity_dates = [row[0] for row in c.fetchall()]
+    st.write(activity_dates)
     conn.close()
     
     streak_days = {}

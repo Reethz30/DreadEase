@@ -30,7 +30,7 @@ def save_login_session(email):
     conn = connect_db()
     c = conn.cursor()
     # Log the login date
-    login_date = datetime.datetime.now()
+    login_date = datetime.datetime.now().date()
     logout_time=None
     c.execute('INSERT INTO activity_log (email, login_date,logout_time) VALUES (?,?,?)', (email, login_date,logout_time))
     

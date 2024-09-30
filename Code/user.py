@@ -62,6 +62,7 @@ def display_calendar(year, month, active_days):
 
     days_in_month = [first_day + timedelta(days=i) for i in range((last_day - first_day).days + 1)]
     active_days_set = set(active_days)
+    st.write(active_days)
 
     # Display the calendar
     calendar_html = '<table style="border-collapse: collapse;">'

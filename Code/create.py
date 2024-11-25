@@ -86,7 +86,7 @@ def create_account_page(navigate_to):
             st.error("Password field is empty.")
         else:
             # Generate a unique secret key for the user
-             st.write("The Secret Key is crucial to keep safe for future reference, as it is necessary for actions like password recovery and account verification.")
+            st.write("The Secret Key is crucial to keep safe for future reference, as it is necessary for actions like password recovery and account verification.")
             secret_key = str(uuid.uuid4())
             
             # Create the user and log them in if successful
